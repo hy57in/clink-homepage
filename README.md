@@ -52,6 +52,24 @@ yarn start
 http://localhost:3000/
 ```
 
+## 프로젝트 구조
+
+- public : 이미지 등 크기가 크지만 자주 안 바뀌는 정적 파일 모음
+
+- src : 프로젝트와 관련된 코드 모음 (JavaScript, CSS)
+
+  - components : React 컴포넌트 관련 파일 모음 (여기서 GraphQL 쿼리 처리)
+
+  - hooks : 공통되는 React Custom Hook 모음
+
+  - pages : template 컴포넌트의 비어있는 공간에 실제 content를 채우는 컴포넌트 (데이터 불러오기 등 로직은 제외). 파일 하나 하나의 경로가 실제 URL이다.
+
+  - types : TypeScript의 type, interface를 모아 놓은 폴더
+
+  - utils : 프로젝트 전체에 공통으로 쓰이는 함수를 모아 놓은 폴더
+
+- test : Jest를 활용해 컴포넌트를 테스트하는 코드를 모아 놓은 폴더
+
 ## NextJS Typescript Boilerplate
 
 Bootstrap a developer-friendly NextJS app configured with:
