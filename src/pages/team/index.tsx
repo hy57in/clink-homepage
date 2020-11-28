@@ -1,5 +1,5 @@
 function TeamPage() {
-  return <div />
+  return <div>Team page</div>
 }
 
 export default TeamPage

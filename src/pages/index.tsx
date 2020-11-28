@@ -1,5 +1,6 @@
-import { Button } from 'antd'
+import { Button, message } from 'antd'
 import Head from 'next/head'
+import Link from 'next/link'
 import React from 'react'
 
 function HomePage() {
@@ -12,54 +13,50 @@ function HomePage() {
 
       <main>
         <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to <a href="https://www.facebook.com/CAUCLink/">C-Link!</a>
         </h1>
 
         <p className="description">
-          Get started by editing <code>pages/index.tsx</code>
+          Get started by editing <code>src/pages/index.tsx</code>
         </p>
 
-        <Button
-          onClick={() => {
-            window.alert('With typescript and Jest')
-          }}
-          type="primary"
-        >
+        <Button onClick={() => message.info('With Ant-Design')} type="primary">
           Test Button
         </Button>
 
         <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+          <Link href="/about">
+            <a href="/about" className="card">
+              <h3>About &rarr;</h3>
+              <p>C-Link를 소개하는 페이지</p>
+            </a>
+          </Link>
 
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+          <Link href="/contact">
+            <a href="/contact" className="card">
+              <h3>Contact &rarr;</h3>
+              <p>C-Link 연락처가 있는 페이지</p>
+            </a>
+          </Link>
 
-          <a href="https://github.com/vercel/next.js/tree/master/examples" className="card">
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+          <Link href="/posts">
+            <a href="/posts" className="card">
+              <h3>Posts &rarr;</h3>
+              <p>C-Link 학회원들이 작성한 글의 링크가 있는 페이지</p>
+            </a>
+          </Link>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
+          <Link href="/projects">
+            <a href="projects" className="card">
+              <h3>Projects &rarr;</h3>
+              <p>C-Link에서 진행했던, 진행 중인, 진행할 프로젝트를 소개하는 페이지</p>
+            </a>
+          </Link>
         </div>
       </main>
 
       <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://www.facebook.com/CAUCLink/" target="_blank" rel="noopener noreferrer">
           Powered by <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
         </a>
       </footer>

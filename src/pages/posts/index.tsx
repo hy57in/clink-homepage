@@ -1,5 +1,5 @@
 function PostsPage() {
-  return <div />
+  return <div>Posts page</div>
 }
 
 export default PostsPage
