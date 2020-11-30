@@ -9,8 +9,8 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc --pretty --noEmit",
-    "format": "prettier \"+(src|test)/**/*.+(ts|js|tsx)\" --write",
-    "lint": "eslint \"+(src|test)/**/*.+(ts|js|tsx)\"",
+    "format": "prettier \"src/**/*.+(ts|tsx)\" --write",
+    "lint": "eslint \"src/**/*.+(ts|tsx)\"",
     "test": "jest",
     "test-all": "yarn lint && yarn type-check && yarn test"
   },

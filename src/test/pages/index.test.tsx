@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, fireEvent } from '../testUtils'
-import HomePage from '../../src/pages/index'
+import HomePage from '../../pages/index'
 
 describe('Home page', () => {
   it('matches snapshot', () => {
