@@ -1,59 +1,56 @@
 import { Button, message } from 'antd'
-import Head from 'next/head'
 import Link from 'next/link'
 import React from 'react'
+import PageTemplate from 'src/components/PageTemplate'
 
 function HomePage() {
   return (
     <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <PageTemplate title="C-Link">
+        <main>
+          <h1 className="title">
+            Welcome to <a href="https://www.facebook.com/CAUCLink/">C-Link!</a>
+          </h1>
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://www.facebook.com/CAUCLink/">C-Link!</a>
-        </h1>
+          <p className="description">
+            Get started by editing <code>src/pages/index.tsx</code>
+          </p>
 
-        <p className="description">
-          Get started by editing <code>src/pages/index.tsx</code>
-        </p>
+          <Button onClick={() => message.info('With Ant-Design')} type="primary">
+            Test Button
+          </Button>
 
-        <Button onClick={() => message.info('With Ant-Design')} type="primary">
-          Test Button
-        </Button>
+          <div className="grid">
+            <Link href="/about">
+              <a href="/about" className="card">
+                <h3>About &rarr;</h3>
+                <p>C-Link를 소개하는 페이지</p>
+              </a>
+            </Link>
 
-        <div className="grid">
-          <Link href="/about">
-            <a href="/about" className="card">
-              <h3>About &rarr;</h3>
-              <p>C-Link를 소개하는 페이지</p>
-            </a>
-          </Link>
+            <Link href="/contact">
+              <a href="/contact" className="card">
+                <h3>Contact &rarr;</h3>
+                <p>C-Link 연락처가 있는 페이지</p>
+              </a>
+            </Link>
 
-          <Link href="/contact">
-            <a href="/contact" className="card">
-              <h3>Contact &rarr;</h3>
-              <p>C-Link 연락처가 있는 페이지</p>
-            </a>
-          </Link>
+            <Link href="/posts">
+              <a href="/posts" className="card">
+                <h3>Posts &rarr;</h3>
+                <p>C-Link 학회원들이 작성한 글의 링크가 있는 페이지</p>
+              </a>
+            </Link>
 
-          <Link href="/posts">
-            <a href="/posts" className="card">
-              <h3>Posts &rarr;</h3>
-              <p>C-Link 학회원들이 작성한 글의 링크가 있는 페이지</p>
-            </a>
-          </Link>
-
-          <Link href="/projects">
-            <a href="projects" className="card">
-              <h3>Projects &rarr;</h3>
-              <p>C-Link에서 진행했던, 진행 중인, 진행할 프로젝트를 소개하는 페이지</p>
-            </a>
-          </Link>
-        </div>
-      </main>
+            <Link href="/projects">
+              <a href="projects" className="card">
+                <h3>Projects &rarr;</h3>
+                <p>C-Link에서 진행했던, 진행 중인, 진행할 프로젝트를 소개하는 페이지</p>
+              </a>
+            </Link>
+          </div>
+        </main>
+      </PageTemplate>
 
       <footer>
         <a href="https://www.facebook.com/CAUCLink/" target="_blank" rel="noopener noreferrer">

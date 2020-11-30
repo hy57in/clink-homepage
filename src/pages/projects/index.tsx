@@ -1,5 +1,12 @@
+import React from 'react'
+import PageTemplate from 'src/components/PageTemplate'
+
 function ProjectsPage() {
-  return <div>Projects page</div>
+  return (
+    <PageTemplate title="C-Link Projects">
+      <div>Projects page</div>
+    </PageTemplate>
+  )
 }
 
 export default ProjectsPage
