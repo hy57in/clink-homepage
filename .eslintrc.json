@@ -24,27 +24,24 @@
   },
   "plugins": ["@typescript-eslint", "react-hooks", "prettier"],
   "rules": {
-    "default-case": "off",            // TypeScript's `noFallthroughCasesInSwitch` option is more robust (#6906)
-    "no-array-constructor": "off",    // Add TypeScript specific rules (and turn off ESLint equivalents)
+    "default-case": "off", // TypeScript's `noFallthroughCasesInSwitch` option is more robust (#6906)
+    "no-array-constructor": "off", // Add TypeScript specific rules (and turn off ESLint equivalents)
     "no-console": [
       "warn",
       {
-        "allow": [
-          "warn",
-          "error"
-        ]
+        "allow": ["warn", "error"]
       }
     ],
-    "no-dupe-class-members": "off",   // 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/291)
-    "no-undef": "off",                // 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/477)
-    "no-unused-expressions": "off",   // Add TypeScript specific rules (and turn off ESLint equivalents)
-    "no-unused-vars": "off",          // Add TypeScript specific rules (and turn off ESLint equivalents)
-    "no-use-before-define": "off",    // Add TypeScript specific rules (and turn off ESLint equivalents)
-    "no-useless-constructor": "off",  // Add TypeScript specific rules (and turn off ESLint equivalents)
+    "no-dupe-class-members": "off", // 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/291)
+    "no-undef": "off", // 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/477)
+    "no-unused-expressions": "off", // Add TypeScript specific rules (and turn off ESLint equivalents)
+    "no-unused-vars": "off", // Add TypeScript specific rules (and turn off ESLint equivalents)
+    "no-use-before-define": "off", // Add TypeScript specific rules (and turn off ESLint equivalents)
+    "no-useless-constructor": "off", // Add TypeScript specific rules (and turn off ESLint equivalents)
     "no-var": "error",
 
     "prettier/prettier": "error",
-    
+
     "react/display-name": "off",
     "react/forbid-prop-types": "error",
     "react/no-danger": "error",
@@ -55,7 +52,7 @@
     "react/jsx-uses-react": "off",
     "react-hooks/exhaustive-deps": "warn",
     "react-hooks/rules-of-hooks": "error",
-    
+
     "@typescript-eslint/consistent-type-assertions": "error",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-member-accessibility": "off",
