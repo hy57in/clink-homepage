@@ -1,12 +1,9 @@
 {
   "env": {
     "development": {
-      "presets": ["next/babel"],
-      "plugins": [["babel-plugin-styled-components", { "ssr": true, "displayName": true, "fileName": true }]]
-    },
-    "production": {
-      "presets": ["next/babel"],
-      "plugins": [["babel-plugin-styled-components", { "ssr": true, "displayName": false, "fileName": false }]]
+      "plugins": [["babel-plugin-styled-components", { "ssr": true }]]
     }
-  }
+  },
+  "presets": ["next/babel"],
+  "plugins": [["babel-plugin-styled-components", { "ssr": true, "displayName": false }]]
 }
