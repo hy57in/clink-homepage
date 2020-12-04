@@ -2,25 +2,69 @@ import { Button, message } from 'antd'
 import Link from 'next/link'
 import React from 'react'
 import PageTemplate from 'src/components/PageTemplate'
+import styled from 'styled-components'
+
+const Title = styled.h1`
+  text-align: center;
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+`
+
+const StyledA = styled.a`
+  color: #0070f3;
+  text-decoration: none;
+
+  :hover,
+  :focus,
+  :active {
+    text-decoration: underline;
+  }
+`
+
+const Description = styled.p`
+  text-align: center;
+  line-height: 1.5;
+  font-size: 1.5rem;
+`
+
+const GridContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  max-width: 800px;
+  margin-top: 3rem;
+
+  @media (max-width: 600px) {
+    width: 100%;
+    flex-direction: column;
+  }
+`
+
+function handleClickTestButton() {
+  return message.info('With Ant-Design')
+}
 
 function HomePage() {
   return (
     <div className="container">
       <PageTemplate title="C-Link">
         <main>
-          <h1 className="title">
-            Welcome to <a href="https://www.facebook.com/CAUCLink/">C-Link!</a>
-          </h1>
+          <Title>
+            Welcome to <StyledA href="https://www.facebook.com/CAUCLink/">C-Link!</StyledA>
+          </Title>
 
-          <p className="description">
+          <Description>
             Get started by editing <code>src/pages/index.tsx</code>
-          </p>
+          </Description>
 
-          <Button onClick={() => message.info('With Ant-Design')} type="primary">
+          <Button onClick={handleClickTestButton} type="primary">
             Test Button
           </Button>
 
-          <div className="grid">
+          <GridContainer>
             <Link href="/about">
               <a href="/about" className="card">
                 <h3>About &rarr;</h3>
@@ -48,7 +92,7 @@ function HomePage() {
                 <p>C-Link에서 진행했던, 진행 중인, 진행할 프로젝트를 소개하는 페이지</p>
               </a>
             </Link>
-          </div>
+          </GridContainer>
         </main>
       </PageTemplate>
 
@@ -102,33 +146,6 @@ function HomePage() {
             text-decoration: none;
           }
 
-          .title a {
-            color: #0070f3;
-            text-decoration: none;
-          }
-
-          .title a:hover,
-          .title a:focus,
-          .title a:active {
-            text-decoration: underline;
-          }
-
-          .title {
-            margin: 0;
-            line-height: 1.15;
-            font-size: 4rem;
-          }
-
-          .title,
-          .description {
-            text-align: center;
-          }
-
-          .description {
-            line-height: 1.5;
-            font-size: 1.5rem;
-          }
-
           code {
             background: #fafafa;
             border-radius: 5px;
@@ -136,16 +153,6 @@ function HomePage() {
             font-size: 1.1rem;
             font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono,
               Courier New, monospace;
-          }
-
-          .grid {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-
-            max-width: 800px;
-            margin-top: 3rem;
           }
 
           .card {
@@ -180,29 +187,6 @@ function HomePage() {
 
           .logo {
             height: 1em;
-          }
-
-          @media (max-width: 600px) {
-            .grid {
-              width: 100%;
-              flex-direction: column;
-            }
-          }
-        `}
-      </style>
-
-      <style jsx global>
-        {`
-          html,
-          body {
-            padding: 0;
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
-              Droid Sans, Helvetica Neue, sans-serif;
-          }
-
-          * {
-            box-sizing: border-box;
           }
         `}
       </style>
