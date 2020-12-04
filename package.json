@@ -16,14 +16,14 @@
     "build": "next build",
     "export": "next export",
     "start": "next start",
-    "type-check": "tsc --pretty --noEmit",
-    "format": "prettier . --write --ignore-path .gitignore",
     "lint": "eslint . --ignore-path .gitignore",
+    "format": "prettier . --write --ignore-path .gitignore",
+    "type-check": "tsc --pretty --noEmit",
     "test": "jest"
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn lint && yarn format && yarn run type-check"
+      "pre-push": "yarn lint && yarn format && yarn type-check"
     }
   },
   "dependencies": {
