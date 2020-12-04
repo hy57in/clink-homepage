@@ -4,11 +4,11 @@
 
 ## 사용한 라이브러리
 
-- React
-- Next
-- TypeScript
-- Styled Components
-- Ant-Design
+- React v17
+- Next v10
+- TypeScript v4
+- Styled Components v5
+- Ant-Design v4
 - Linting with [ESLint](https://eslint.org/)
 - Formatting with [Prettier](https://prettier.io/)
 - Linting, typechecking and formatting on by default using [`husky`](https://github.com/typicode/husky) for commit hooks
@@ -16,7 +16,7 @@
 
 ## 개발 환경
 
-- Node (필수)
+- Node v14 (필수)
 - Git (필수)
 - Yarn (권장)
 - Visual Studio Code (권장)
