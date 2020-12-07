@@ -18,16 +18,11 @@
     "start": "next start",
     "lint": "eslint . --ignore-path .gitignore",
     "format": "prettier . --write --ignore-path .gitignore",
-    "type-check": "tsc --pretty --noEmit",
+    "type-check": "tsc --pretty",
     "test": "jest"
   },
-  "husky": {
-    "hooks": {
-      "pre-push": "yarn lint && yarn format && yarn type-check"
-    }
-  },
   "dependencies": {
-    "antd": "^4.8.6",
+    "antd": "^4.9.2",
     "next": "^10.0.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -36,7 +31,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "^11.2.2",
-    "@types/jest": "^26.0.15",
+    "@types/jest": "^26.0.16",
     "@types/node": "^14.14.10",
     "@types/react": "^17.0.0",
     "@types/styled-components": "^5.1.4",
@@ -44,19 +39,29 @@
     "@typescript-eslint/parser": "^4.8.2",
     "babel-jest": "^26.6.3",
     "babel-plugin-styled-components": "^1.12.0",
-    "eslint": "^7.14.0",
-    "eslint-config-prettier": "^6.15.0",
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-prettier": "^3.2.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "^4.3.0",
+    "husky": "^4.3.5",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",
     "jest-watch-typeahead": "^0.6.1",
     "prettier": "^2.2.0",
     "typescript": "^4.1.2"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "maintained node versions"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn lint && yarn format && yarn type-check"
+    }
   }
 }
