@@ -7,8 +7,6 @@
   },
   "extends": [
     "eslint:recommended",
-    "prettier",
-    "prettier/@typescript-eslint", // Disables eslint features that conflicts with prettier
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
@@ -17,6 +15,8 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/@typescript-eslint", // Disables eslint features that conflicts with prettier
     "plugin:prettier/recommended" // prettier/recommended MUST be at the last of the array
   ],
   "parser": "@typescript-eslint/parser",
@@ -52,8 +52,6 @@
     "node/no-unpublished-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
 
-    "prettier/prettier": "error",
-
     "react/forbid-prop-types": "error",
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-uses-react": "off",
@@ -86,5 +84,14 @@
         "argsIgnorePattern": "^_"
       }
     ]
+  },
+  "settings": {
+    "react": {
+      // React version. "detect" automatically picks the version you have installed.
+      // You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
+      // default to latest and warns if missing
+      // It will default to "detect" in the future
+      "version": "detect"
+    }
   }
 }
