@@ -21,3 +21,4 @@
 - Yarn (권장)
 - Visual Studio Code (권장)
 - Chrome (권장)
+- Windows 10, macOS 11, Ubuntu 20.04 (권장)
