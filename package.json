@@ -19,6 +19,7 @@
     "lint": "eslint . --ignore-path .gitignore",
     "format": "prettier . --write --ignore-path .gitignore",
     "type-check": "tsc --pretty",
+    "pre-commit": "yarn lint && yarn format && yarn type-check",
     "test": "jest"
   },
   "dependencies": {
@@ -62,7 +63,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-push": "yarn lint && yarn format && yarn type-check"
+      "pre-push": "pre-commit"
     }
   }
 }
