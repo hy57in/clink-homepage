@@ -16,7 +16,9 @@ function Hello2({ a, b }: Props) {
     <>
       <div>{a}</div>
       <div>{b}</div>
-      <div onClick={handleClick}>{isLoading}</div>
+      <div onClick={handleClick} role="alert">
+        {isLoading}
+      </div>
     </>
   )
 }
