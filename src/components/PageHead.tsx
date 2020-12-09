@@ -6,7 +6,7 @@ type Props = {
   title: string
 }
 
-function PageTemplate({ children, title }: Props) {
+function PageHead({ children, title }: Props) {
   return (
     <>
       <Head>
@@ -18,4 +18,4 @@ function PageTemplate({ children, title }: Props) {
   )
 }
 
-export default PageTemplate
+export default PageHead

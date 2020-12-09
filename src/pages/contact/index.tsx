@@ -1,11 +1,10 @@
-import React from 'react'
-import PageTemplate from 'src/components/PageTemplate'
+import PageHead from 'src/components/PageHead'
 
 function ContactPage() {
   return (
-    <PageTemplate title="C-Link Contact">
+    <PageHead title="C-Link Contact">
       <div>Contact page</div>
-    </PageTemplate>
+    </PageHead>
   )
 }
 

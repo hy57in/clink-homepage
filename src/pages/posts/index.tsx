@@ -1,11 +1,10 @@
-import React from 'react'
-import PageTemplate from 'src/components/PageTemplate'
+import PageHead from 'src/components/PageHead'
 
 function PostsPage() {
   return (
-    <PageTemplate title="C-Link Posts">
+    <PageHead title="C-Link Posts">
       <div>Posts page</div>
-    </PageTemplate>
+    </PageHead>
   )
 }
 
