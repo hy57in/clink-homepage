@@ -1,5 +1,7 @@
 {
   "files.autoSave": "onFocusChange",
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -10,5 +12,5 @@
   },
   "typescript.tsdk": "node_modules/typescript/lib",
   "eslint.packageManager": "yarn",
-  "prettier.packageManager": "yarn"
+  "prettier.packageManager": "yarn",
 }
