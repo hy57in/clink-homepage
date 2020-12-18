@@ -8,7 +8,8 @@ const ImageWrapper = styled.div`
   border-radius: 50%;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.15), 0 0 0 rgba(16, 22, 26, 0), 0 1px 1px rgba(16, 22, 26, 0.2);
+  box-shadow: 0 0 0 1px rgba(16, 22, 26, 0.15), 0 0 0 rgba(16, 22, 26, 0),
+    0 1px 1px rgba(16, 22, 26, 0.2);
 `
 
 const Image = styled.img`
