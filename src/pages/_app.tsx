@@ -1,16 +1,14 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { createGlobalStyle } from 'styled-components'
-import { normalize } from 'styled-normalize'
+import 'sanitize.css'
 import 'antd/dist/antd.css'
 
 const GlobalStyle = createGlobalStyle`
-  ${normalize}
   html,
   body,
   #root {
     padding: 0;
-    margin: 0;
     font-size: 16px;
   }
 `
