@@ -1,16 +1,18 @@
 {
   "files.autoSave": "onFocusChange",
+  "files.eol": "\n",
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "search.exclude": {
     "**/.git": true,
-    "**/.next": true,
-    "**/node_modules": true
+    "**/.next": true
   },
   "typescript.tsdk": "node_modules/typescript/lib",
   "eslint.packageManager": "yarn",
-  "prettier.packageManager": "yarn",
+  "prettier.packageManager": "yarn"
 }
