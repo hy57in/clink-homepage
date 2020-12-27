@@ -6,9 +6,17 @@
   },
   "extends": [
     "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:node/recommended",
+    "plugin:promise/recommended",
     "standard",
+
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:jest/recommended",
+    "plugin:jest/style",
     "plugin:jsx-a11y/recommended",
     "plugin:@typescript-eslint/recommended",
 
@@ -26,6 +34,7 @@
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint"],
+  "root": true,
   "rules": {
     "no-console": [
       "warn",
@@ -33,7 +42,6 @@
         "allow": ["warn", "error"]
       }
     ],
-    "no-var": "error",
 
     "import/no-unresolved": "off",
 

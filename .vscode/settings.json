@@ -1,5 +1,4 @@
 {
-  "files.autoSave": "onFocusChange",
   "files.eol": "\n",
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
@@ -10,7 +9,8 @@
   },
   "search.exclude": {
     "**/.git": true,
-    "**/.next": true
+    "**/.next": true,
+    "**/out": true,
   },
   "typescript.tsdk": "node_modules/typescript/lib",
   "eslint.packageManager": "yarn",
