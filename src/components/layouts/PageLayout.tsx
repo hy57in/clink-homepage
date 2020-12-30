@@ -1,22 +1,14 @@
 import { ReactNode } from 'react'
+import Header from '../Header'
 
 type Props = {
   children: ReactNode
-  left: ReactNode
-  right: ReactNode
-  top: ReactNode
-  bottom: ReactNode
 }
 
-function PageLayout({ children, left, right, top, bottom }: Props) {
+function PageLayout({ children }: Props) {
   return (
     <>
-      <div>{top}</div>
-      <div>
-        <span>{left}</span>
-        <span>{right}</span>
-      </div>
-      <div>{bottom}</div>
+      <Header />
       {children}
     </>
   )
