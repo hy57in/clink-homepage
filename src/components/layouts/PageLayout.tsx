@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import Footer from '../Footer'
 import Header from '../Header'
 
 type Props = {
@@ -9,7 +10,8 @@ function PageLayout({ children }: Props) {
   return (
     <>
       <Header />
-      {children}
+      <main>{children}</main>
+      <Footer />
     </>
   )
 }
