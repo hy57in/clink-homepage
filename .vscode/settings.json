@@ -10,7 +10,7 @@
   "search.exclude": {
     "**/.git": true,
     "**/.next": true,
-    "**/out": true,
+    "**/out": true
   },
   "typescript.tsdk": "node_modules/typescript/lib",
   "eslint.packageManager": "yarn",
