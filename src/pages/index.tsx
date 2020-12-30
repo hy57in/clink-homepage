@@ -1,7 +1,7 @@
 import { Button, message } from 'antd'
 import Link from 'next/link'
 
-import PageHead from 'src/components/PageHead'
+import PageTitle from 'src/components/layouts/PageTitle'
 import styled from 'styled-components'
 
 const Title = styled.h1`
@@ -50,7 +50,7 @@ function handleClickTestButton() {
 function HomePage() {
   return (
     <div className="container">
-      <PageHead title="C-Link">
+      <PageTitle title="C-Link">
         <main>
           <Title>
             Welcome to <StyledA href="https://www.facebook.com/CAUCLink/">C-Link!</StyledA>
@@ -94,7 +94,7 @@ function HomePage() {
             </Link>
           </GridContainer>
         </main>
-      </PageHead>
+      </PageTitle>
 
       <footer>
         <a href="https://www.facebook.com/CAUCLink/" target="_blank" rel="noopener noreferrer">

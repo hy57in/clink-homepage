@@ -18,6 +18,7 @@ function CLinkApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width, minimal-ui" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <GlobalStyle />
       <Component {...pageProps} />

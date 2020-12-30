@@ -1,10 +1,10 @@
-import PageHead from 'src/components/PageHead'
+import PageTitle from 'src/components/layouts/PageTitle'
 
 function TeamPage() {
   return (
-    <PageHead title="C-Link Team">
+    <PageTitle title="C-Link Team">
       <div>Team page</div>
-    </PageHead>
+    </PageTitle>
   )
 }
 

@@ -1,10 +1,10 @@
-import PageHead from 'src/components/PageHead'
+import PageTitle from 'src/components/layouts/PageTitle'
 
 function ProjectsPage() {
   return (
-    <PageHead title="C-Link Projects">
+    <PageTitle title="C-Link Projects">
       <div>Projects page</div>
-    </PageHead>
+    </PageTitle>
   )
 }
 
