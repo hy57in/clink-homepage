@@ -5,7 +5,7 @@ import PageTitle from 'src/components/layouts/PageTitle'
 import styled from 'styled-components'
 
 const Title = styled.h2`
-  margin: 2rem 0;
+  margin: 1rem 0;
 `
 
 const ExampleParagraph = (

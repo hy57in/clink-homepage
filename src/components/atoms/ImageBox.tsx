@@ -12,6 +12,7 @@ const FlexContainer = styled.div<{ rightImage: boolean }>`
 const FlexContainerColumn = styled.div<{ rightImage: boolean }>`
   display: flex;
   flex-flow: column nowrap;
+  gap: 1rem;
 
   & :last-child {
     text-align: ${(p) => (p.rightImage ? 'right' : 'left')};
