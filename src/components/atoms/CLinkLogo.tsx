@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 // eslint-disable-next-line @typescript-eslint/ban-types
@@ -9,7 +8,7 @@ function CLinkLogo({}: Props) {
   return (
     <Link href="/">
       <a href="/">
-        <Image src="/clink-logo.png" width={1} height={1} />
+        <img src="/clink-logo.png" alt="C-Link Logo" />
       </a>
     </Link>
   )
