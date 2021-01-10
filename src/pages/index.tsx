@@ -31,7 +31,7 @@ const ExampleParagraph = (
 
 function HomePage() {
   return (
-    <PageTitle title="C-Link">
+    <PageTitle title="중앙대학교 블록체인 학회 C-Link">
       <PageLayout>
         <ImageBox>
           <GradientBorder borderSize="1rem">
