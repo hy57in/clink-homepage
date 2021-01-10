@@ -1,3 +1,4 @@
+import GradientBorder from 'src/components/atoms/GradientBorder'
 import ImageBox from 'src/components/atoms/ImageBox'
 import PageLayout from 'src/components/layouts/PageLayout'
 
@@ -33,18 +34,22 @@ function HomePage() {
     <PageTitle title="C-Link">
       <PageLayout>
         <ImageBox>
-          <img
-            src="https://media.vlpt.us/images/gwak2837/profile/fe9e991c-0c0c-44b2-8027-af0c6e29f4ba/filename2.jpg?w=120"
-            alt="imaeg"
-          />
+          <GradientBorder borderSize="1rem">
+            <img
+              src="https://media.vlpt.us/images/gwak2837/profile/fe9e991c-0c0c-44b2-8027-af0c6e29f4ba/filename2.jpg?w=120"
+              alt="imaeg"
+            />
+          </GradientBorder>
           <Title>[2ND WORKSHOP, 2019]</Title>
           {ExampleParagraph}
         </ImageBox>
         <ImageBox rightImage>
-          <img
-            src="https://media.vlpt.us/images/gwak2837/profile/fe9e991c-0c0c-44b2-8027-af0c6e29f4ba/filename2.jpg?w=120"
-            alt="imaeg"
-          />
+          <GradientBorder borderSize="1rem">
+            <img
+              src="https://media.vlpt.us/images/gwak2837/profile/fe9e991c-0c0c-44b2-8027-af0c6e29f4ba/filename2.jpg?w=120"
+              alt="imaeg"
+            />
+          </GradientBorder>
           <Title>[2ND WORKSHOP, 2019]</Title>
           {ExampleParagraph}
         </ImageBox>
