@@ -130,8 +130,8 @@ function People() {
         <More href="/team">MORE &rarr;</More>
       </h6>
       <GridContainer>
-        {data.map((person) => (
-          <a href={person.address} target="_blank">
+        {data.map((person, i) => (
+          <a href={person.address} target="_blank" key={i} rel="noreferrer">
             <PersonalBox>
               <ImageBox>
                 <Image src={person.image} />
