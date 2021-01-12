@@ -88,13 +88,13 @@ function HomePage() {
     <PageTitle title="C-Link">
       <PageLayout>
         <Container>
-          {Projects1.map((project) => (
-            <ProjectContentBox project={project}></ProjectContentBox>
+          {Projects1.map((project, index) => (
+            <ProjectContentBox project={project} key={index}></ProjectContentBox>
           ))}
         </Container>
         <Container>
-          {Projects2.map((project) => (
-            <ProjectContentBox project={project}></ProjectContentBox>
+          {Projects2.map((project, index) => (
+            <ProjectContentBox project={project} key={index}></ProjectContentBox>
           ))}
         </Container>
         <ImageBox>
