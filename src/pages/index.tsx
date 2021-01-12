@@ -1,6 +1,6 @@
 import ImageBox from 'src/components/atoms/ImageBox'
 import PageLayout from 'src/components/layouts/PageLayout'
-
+import ProjectContentBox from 'src/components/atoms/ProjectContentBox'
 import PageTitle from 'src/components/layouts/PageTitle'
 import styled from 'styled-components'
 
@@ -28,10 +28,75 @@ const ExampleParagraph = (
   </p>
 )
 
+interface Information {
+  name: string
+  content: string[]
+  image: string
+}
+
+const Projects1: Information[] = [
+  {
+    name: 'MEETING',
+    content: ['Andreas Antonopoulos', 'author of [Mastering Bitcoin]', '@nonce'],
+    image: 'https://i.investopedia.com/image/jpeg/1514919556479/eth.jpeg',
+  },
+  {
+    name: 'OPEN SESSION',
+    content: ['History of Blockchain', 'Blochchain Structure', 'Blockchain Use Case 1, 2', '@CAU'],
+    image: 'https://i.investopedia.com/image/jpeg/1514919556479/eth.jpeg',
+  },
+  {
+    name: 'HACKATHON',
+    content: [
+      'BlockCamp Hackathon',
+      'Hosted by [BBR], [DAYBIT]',
+      'Creatip 피칭상 : E-voting simluation',
+      '@seoulstartuphub, mapo',
+    ],
+    image: 'https://i.investopedia.com/image/jpeg/1514919556479/eth.jpeg',
+  },
+]
+const Projects2: Information[] = [
+  {
+    name: 'CONTEST',
+    content: ['Ethcon Korea', 'with Onther Inc.'],
+    image: 'https://i.investopedia.com/image/jpeg/1514919556479/eth.jpeg',
+  },
+  {
+    name: 'MEETING',
+    content: ['@ Terraformlabs', 'with', 'Do Kwon, CEO', 'Nicholas, Head of Research'],
+    image: 'https://i.investopedia.com/image/jpeg/1514919556479/eth.jpeg',
+  },
+  {
+    name: 'HACKATHON',
+    content: [
+      '파운더스 2019 Summer X SK C&C',
+      'Hosted by SK C&C, Decenter University',
+      '1st Prize : Best BM',
+    ],
+    image: 'https://i.investopedia.com/image/jpeg/1514919556479/eth.jpeg',
+  },
+]
+
+const Container = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`
+
 function HomePage() {
   return (
     <PageTitle title="C-Link">
       <PageLayout>
+        <Container>
+          {Projects1.map((project) => (
+            <ProjectContentBox project={project}></ProjectContentBox>
+          ))}
+        </Container>
+        <Container>
+          {Projects2.map((project) => (
+            <ProjectContentBox project={project}></ProjectContentBox>
+          ))}
+        </Container>
         <ImageBox>
           <img
             src="https://media.vlpt.us/images/gwak2837/profile/fe9e991c-0c0c-44b2-8027-af0c6e29f4ba/filename2.jpg?w=120"
