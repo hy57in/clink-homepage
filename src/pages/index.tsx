@@ -94,8 +94,8 @@ function HomePage() {
     <PageTitle title="C-Link">
       <PageLayout>
         <Container>
-          {Projects.map((project, index) => (
-            <ProjectContentBox project={project} key={index}></ProjectContentBox>
+          {Projects.map((project) => (
+            <ProjectContentBox project={project} key={project.id}></ProjectContentBox>
           ))}
         </Container>
         <ImageBox>
