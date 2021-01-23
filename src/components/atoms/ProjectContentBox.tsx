@@ -15,11 +15,8 @@ const Content = styled.div`
   margin-bottom: 1rem;
 `
 
-const Frame = styled.div`
+const Image = styled.img`
   padding: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0) 0%,
@@ -27,9 +24,6 @@ const Frame = styled.div`
       rgba(255, 255, 255, 0.09) 100%
     ),
     linear-gradient(90deg, #fd4444 0%, #6a3bf0 100%);
-`
-
-const Image = styled.img`
   width: 12rem;
   height: 12rem;
 `
@@ -41,9 +35,7 @@ type Props = {
 function ProjectBox({ project }: Props) {
   return (
     <div>
-      <Frame>
-        <Image src={project.image} alt={project.name} />
-      </Frame>
+      <Image src={project.image} alt={project.name} />
       <Title>{project.name}</Title>
       <Content>
         {project.content.map((content, index) => (

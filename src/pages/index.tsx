@@ -29,23 +29,27 @@ const ExampleParagraph = (
 )
 
 interface Information {
+  id: number
   name: string
   content: string[]
   image: string
 }
 
-const Projects1: Information[] = [
+const Projects: Information[] = [
   {
+    id: 1,
     name: 'MEETING',
     content: ['Andreas Antonopoulos', 'author of [Mastering Bitcoin]', '@nonce'],
     image: 'https://i.investopedia.com/image/jpeg/1514919556479/eth.jpeg',
   },
   {
+    id: 2,
     name: 'OPEN SESSION',
     content: ['History of Blockchain', 'Blochchain Structure', 'Blockchain Use Case 1, 2', '@CAU'],
     image: 'https://i.investopedia.com/image/jpeg/1514919556479/eth.jpeg',
   },
   {
+    id: 3,
     name: 'HACKATHON',
     content: [
       'BlockCamp Hackathon',
@@ -55,19 +59,20 @@ const Projects1: Information[] = [
     ],
     image: 'https://i.investopedia.com/image/jpeg/1514919556479/eth.jpeg',
   },
-]
-const Projects2: Information[] = [
   {
+    id: 4,
     name: 'CONTEST',
     content: ['Ethcon Korea', 'with Onther Inc.'],
     image: 'https://i.investopedia.com/image/jpeg/1514919556479/eth.jpeg',
   },
   {
+    id: 5,
     name: 'MEETING',
     content: ['@ Terraformlabs', 'with', 'Do Kwon, CEO', 'Nicholas, Head of Research'],
     image: 'https://i.investopedia.com/image/jpeg/1514919556479/eth.jpeg',
   },
   {
+    id: 6,
     name: 'HACKATHON',
     content: [
       '파운더스 2019 Summer X SK C&C',
@@ -79,8 +84,9 @@ const Projects2: Information[] = [
 ]
 
 const Container = styled.div`
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
 `
 
 function HomePage() {
@@ -88,12 +94,7 @@ function HomePage() {
     <PageTitle title="C-Link">
       <PageLayout>
         <Container>
-          {Projects1.map((project, index) => (
-            <ProjectContentBox project={project} key={index}></ProjectContentBox>
-          ))}
-        </Container>
-        <Container>
-          {Projects2.map((project, index) => (
+          {Projects.map((project, index) => (
             <ProjectContentBox project={project} key={index}></ProjectContentBox>
           ))}
         </Container>
