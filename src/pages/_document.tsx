@@ -31,7 +31,7 @@ export default class CLinkDocument extends Document {
 
   render() {
     return (
-      <Html lang="ko">
+      <Html>
         <Head>
           <link rel="apple-touch-icon" href="/vercel.svg" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
