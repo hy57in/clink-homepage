@@ -1,5 +1,6 @@
 import GradientBorder from 'src/components/atoms/GradientBorder'
 import ImageBox from 'src/components/atoms/ImageBox'
+import InternationalizedLink from 'src/components/InternationalizedLink'
 import PageLayout from 'src/components/layouts/PageLayout'
 
 import PageTitle from 'src/components/layouts/PageTitle'
@@ -33,6 +34,7 @@ function HomePage() {
   return (
     <PageTitle title="중앙대학교 블록체인 학회 C-Link">
       <PageLayout>
+        <InternationalizedLink />
         <ImageBox>
           <GradientBorder borderSize="1rem">
             <img
