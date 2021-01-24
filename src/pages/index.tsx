@@ -4,6 +4,7 @@ import PageLayout from 'src/components/layouts/PageLayout'
 
 import PageTitle from 'src/components/layouts/PageTitle'
 import styled from 'styled-components'
+import MainLogo from 'src/components/MainLogo'
 
 const Title = styled.h1`
   text-align: center;
@@ -52,6 +53,7 @@ function HomePage() {
   return (
     <PageTitle title="C-Link">
       <PageLayout>
+        <MainLogo></MainLogo>
         <Title>
           Welcome to <StyledA href="https://www.facebook.com/CAUCLink/">C-Link!</StyledA>
         </Title>

@@ -5,31 +5,26 @@ import { Drawer } from 'antd'
 import 'antd/dist/antd.css'
 
 const Nav = styled.div`
-  width: 500;
-  right: 0;
-  position: flex;
-  float: left;
-  height: '100%';
+  position: absolute;
   top: 0;
-  background: red;
+  right: 0;
+  width: 200px;
+  height: 100vh;
 `
 
 const NavIcon = styled.div`
   z-index: 2;
   position: absolute;
-  width: 100px;
-  right: 0;
   top: 0;
+  right: 10px;
 `
 
 const NavList = styled.div`
   z-index: 0;
-  width: 200;
-  height: '100%';
+  width: 200px;
+  height: '100vh';
   right: 0;
   top: 0;
-  background: pink;
-  position: fixed;
 `
 
 const StyledA = styled.a`
@@ -37,6 +32,7 @@ const StyledA = styled.a`
   text-decoration: none;
   font-family: Poppins;
   font-size: 20px;
+  line-height: 20px;
   :hover,
   :focus,
   :active {
@@ -82,7 +78,7 @@ function Navigation({}: Props) {
           mask={false}
           height="100%"
           drawerStyle={{ marginTop: 50, textAlign: 'right' }}
-          style={{ position: 'absolute', width: 200, zIndex: 1 }}
+          style={{ position: 'absolute', right: 0, width: 200, zIndex: 1 }}
         >
           <StyledA href="/about">
             <p>ABOUT</p>

@@ -1,60 +1,41 @@
 import styled from 'styled-components'
 
 const Group1 = styled.div`
-  position: absolute;
-  width: 2381px;
-  height: 121px;
-  left: 727px;
-  top: 770px;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+`
+
+const Clink = styled.div`
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 510;
+  font-size: 350px;
+  line-height: 100vh;
+  text-align: center;
+  color: #000000;
+  white-space: nowrap;
 `
 
 const Text = styled.p`
-  position: absolute;
-  width: 2336.61px;
-  height: 121px;
-  left: 747.18px;
-  top: 770px;
-
   font-family: Poppins;
   font-style: normal;
-  font-weight: normal;
-  font-size: 100px;
-  line-height: 150px;
-  display: flex;
-  align-items: center;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 50px;
   text-align: center;
-
-  color: #ffffff;
-`
-
-const Rect = styled.div`
+  letter-spacing: 0.03em;
+  color: white;
+  background: black;
   position: absolute;
-  width: 2381px;
-  height: 121px;
-  left: 727px;
-  top: 770px;
-
-  background: #000000;
+  top: 50%;
+  left: 53%;
+  padding-left: 20px;
+  padding-right: 20px;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
 `
 
-const Clink = styled.h1`
-  position: absolute;
-  width: 2675px;
-  height: 722px;
-  left: calc(50% - 2675px / 2);
-  top: calc(50% - 722px / 2 - 2669px);
-
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 900px;
-  line-height: 1350px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-
-  color: #000000;
-`
 // eslint-disable-next-line @typescript-eslint/ban-types
 type Props = {}
 
@@ -62,9 +43,8 @@ type Props = {}
 function MainLogo({}: Props) {
   return (
     <>
-      <Clink>CLINK</Clink>
       <Group1>
-        <Rect></Rect>
+        <Clink>CLINK</Clink>
         <Text>Hello, World. 중앙대학교 블록체인학회 씨링크 입니다.</Text>
       </Group1>
     </>
