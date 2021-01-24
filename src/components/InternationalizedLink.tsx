@@ -1,5 +1,12 @@
 import { useRouter } from 'next/dist/client/router'
 import Link from 'next/link'
+import styled from 'styled-components'
+
+const StyledA = styled.a<{ isTextColorBlack: boolean }>`
+  margin: 0.5rem;
+  font-family: Poppins;
+  color: ${(p) => (p.isTextColorBlack ? 'black' : 'grey')};
+`
 
 function InternationalizedLink() {
   const router = useRouter()
@@ -7,10 +14,14 @@ function InternationalizedLink() {
   return (
     <>
       <Link href={router.pathname} locale="ko">
-        <a href={router.pathname}>KOR</a>
+        <StyledA href={router.pathname} isTextColorBlack={router.locale === 'ko'}>
+          KOR
+        </StyledA>
       </Link>
       <Link href={router.pathname} locale="en">
-        <a href={router.pathname}>ENG</a>
+        <StyledA href={router.pathname} isTextColorBlack={router.locale === 'en'}>
+          ENG
+        </StyledA>
       </Link>
     </>
   )
