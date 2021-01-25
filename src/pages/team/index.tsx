@@ -152,7 +152,7 @@ function TeamPage() {
         <div>Team page</div>
         <BigContainer>
           {data.map((person) => (
-            <CardContainer>
+            <CardContainer key={person.id}>
               <SuperContainer>
                 <NameContainer />
                 <ImageContainer>
