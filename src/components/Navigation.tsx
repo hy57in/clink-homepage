@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Drawer } from 'antd'
 import 'antd/dist/antd.css'
 
-const Nav = styled.div`
+const Nav = styled.nav`
   position: absolute;
   top: 0;
   right: 0;
