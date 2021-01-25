@@ -4,14 +4,6 @@ import { useState } from 'react'
 import { Drawer } from 'antd'
 import 'antd/dist/antd.css'
 
-const Nav = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 200px;
-  height: 100vh;
-`
-
 const NavIcon = styled.div`
   z-index: 2;
   position: absolute;
@@ -56,7 +48,7 @@ function Navigation({}: Props) {
   }
 
   return (
-    <Nav>
+    <nav style={{ position: 'absolute', top: 0, right: 0, width: '200px', height: '100vh' }}>
       <NavList>
         <NavIcon>
           <Hamburger
@@ -94,7 +86,7 @@ function Navigation({}: Props) {
           </StyledA>
         </Drawer>
       </NavList>
-    </Nav>
+    </nav>
   )
 }
 
