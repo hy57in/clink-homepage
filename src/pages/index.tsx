@@ -5,7 +5,7 @@ import PageLayout from 'src/components/layouts/PageLayout'
 import PageTitle from 'src/components/layouts/PageTitle'
 import styled from 'styled-components'
 
-import People from 'src/pages/people'
+import People from 'src/components/people'
 
 const Title = styled.h1`
   text-align: center;
