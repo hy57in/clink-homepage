@@ -182,8 +182,10 @@ function TeamPage() {
               </SuperContainer>
               <InfoContainer>
                 <FlatformContainer>
-                  {Object.keys(person.address).map((flatform) =>
-                    person.address[flatform] !== '' ? (
+                  {Object.entries(person.address)
+                    .filter((item) => item[1] !== '')
+                    .map((item) => item[0])
+                    .map((flatform) =>
                       flatform === 'facebook' ? (
                         <Link href={person.address.facebook} key={person.address.facebook}>
                           <StyledA href={person.address.facebook} target="_blank">
@@ -197,16 +199,13 @@ function TeamPage() {
                           </StyledA>
                         </Link>
                       ) : (
-                        <Link href={person.address.github} key={person.address.github}>
-                          <StyledA href={person.address.github} target="_blank">
-                            <IconContainer src="./Github.png" />
+                        <Link href={person.address.instagram} key={person.address.instagram}>
+                          <StyledA href={person.address.instagram} target="_blank">
+                            <IconContainer src="./Instagram.png" />
                           </StyledA>
                         </Link>
                       )
-                    ) : (
-                      ''
-                    )
-                  )}
+                    )}
                 </FlatformContainer>
               </InfoContainer>
             </CardContainer>
