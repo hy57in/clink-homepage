@@ -84,7 +84,17 @@ const data = [
   },
 ]
 
-const BigContainer = styled.div`
+const MemberDiv = styled.div`
+  text-align: center;
+`
+
+const MemberText = styled.h1`
+  font-size: 200px;
+  font-family: poppin;
+  font-weight: 800;
+`
+
+const FlexContainer = styled.div`
   margin: 0px auto;
   display: flex;
   justify-content: center;
@@ -143,7 +153,7 @@ const InfoContainer = styled.div`
   flex-direction: row;
   width: 400px;
   height: 280px;
-  /* background-color: rgba(148, 154, 159, 0.28); */
+  background-color: rgba(148, 154, 159, 0.28);
   margin: 0 50px;
 `
 
@@ -167,8 +177,10 @@ function TeamPage() {
   return (
     <PageTitle title="C-Link Team">
       <PageLayout>
-        <div>Team page</div>
-        <BigContainer>
+        <MemberDiv>
+          <MemberText>MEMBERS</MemberText>
+        </MemberDiv>
+        <FlexContainer>
           {data.map((person) => (
             <CardContainer key={person.id}>
               <SuperContainer>
@@ -210,7 +222,7 @@ function TeamPage() {
               </InfoContainer>
             </CardContainer>
           ))}
-        </BigContainer>
+        </FlexContainer>
       </PageLayout>
     </PageTitle>
   )
