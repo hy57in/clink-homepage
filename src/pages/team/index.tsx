@@ -1,6 +1,7 @@
 import PageLayout from 'src/components/layouts/PageLayout'
 import PageTitle from 'src/components/layouts/PageTitle'
 import styled from 'styled-components'
+import Link from 'next/link'
 
 const data = [
   {
@@ -9,11 +10,12 @@ const data = [
     info1: 'Leader',
     info2: 'Research',
     info3: 'Education',
-    image: 'https://yceffort.kr/2020/10/profile.png',
-    address: 'https://www.facebook.com/CAUCLink',
-    github: '',
-    facebook: '',
-    notion: '',
+    image: './person2.png',
+    address: {
+      github: 'https://github.com/CAU-CLINK',
+      facebook: 'https://www.facebook.com/CAUCLink',
+      instagram: 'https://www.instagram.com',
+    },
   },
   {
     id: 1,
@@ -22,10 +24,11 @@ const data = [
     info2: 'Research',
     info3: 'Education',
     image: './person1.png',
-    address: 'https://www.naver.com',
-    github: '',
-    facebook: '',
-    notion: '',
+    address: {
+      github: 'https://github.com/CAU-CLINK',
+      facebook: 'https://www.facebook.com/CAUCLink',
+      instagram: '',
+    },
   },
   {
     id: 2,
@@ -33,11 +36,12 @@ const data = [
     info1: 'Leader',
     info2: 'Research',
     info3: 'Education',
-    image: 'https://yceffort.kr/2020/10/profile.png',
-    address: 'https://www.naver.com',
-    github: '',
-    facebook: '',
-    notion: '',
+    image: './person2.png',
+    address: {
+      github: '',
+      facebook: 'https://www.facebook.com/CAUCLink',
+      instagram: 'https://www.instagram.com',
+    },
   },
   {
     id: 3,
@@ -46,10 +50,11 @@ const data = [
     info2: 'Research',
     info3: 'Education',
     image: './person1.png',
-    address: 'https://www.naver.com',
-    github: '',
-    facebook: '',
-    notion: '',
+    address: {
+      github: 'https://github.com/CAU-CLINK',
+      facebook: '',
+      instagram: 'https://www.instagram.com',
+    },
   },
   {
     id: 4,
@@ -57,11 +62,12 @@ const data = [
     info1: 'Leader',
     info2: 'Research',
     info3: 'Education',
-    image: './person1.png',
-    address: 'https://www.naver.com',
-    github: '',
-    facebook: '',
-    notion: '',
+    image: './person2.png',
+    address: {
+      github: 'https://github.com/CAU-CLINK',
+      facebook: '',
+      instagram: '',
+    },
   },
   {
     id: 5,
@@ -70,10 +76,11 @@ const data = [
     info2: 'Research',
     info3: 'Education',
     image: './person1.png',
-    address: 'https://www.naver.com',
-    github: '',
-    facebook: '',
-    notion: '',
+    address: {
+      github: '',
+      facebook: 'https://www.facebook.com/CAUCLink',
+      instagram: '',
+    },
   },
 ]
 
@@ -104,7 +111,7 @@ const SuperContainer = styled.div`
   width: 250px;
   height: 280px;
   text-align: center;
-  background-color: lightgreen;
+  background-color: rgba(80, 33, 40, 0.17);
 `
 const ImageContainer = styled.div`
   margin: 0px auto;
@@ -136,13 +143,24 @@ const InfoContainer = styled.div`
   flex-direction: row;
   width: 400px;
   height: 280px;
-  background-color: cyan;
+  /* background-color: rgba(148, 154, 159, 0.28); */
   margin: 0 50px;
 `
 
-const LinkContainer = styled.div`
+const FlatformContainer = styled.div`
+  display: flex;
+  flex-direction: row;
   width: 100%;
-  height: 30px;
+  height: 25px;
+`
+const IconContainer = styled.img`
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+`
+
+const StyledA = styled.a`
+  cursor: pointer;
 `
 
 function TeamPage() {
@@ -163,7 +181,36 @@ function TeamPage() {
                 </NameContainer>
               </SuperContainer>
               <InfoContainer>
-                <LinkContainer></LinkContainer>
+                <FlatformContainer>
+                  {Object.keys(person.address).map((flatform) => {
+                    if (person.address[flatform] !== '') {
+                      if (flatform === 'facebook')
+                        return (
+                          <Link href={person.address.facebook} key={person.address.facebook}>
+                            <StyledA href={person.address.facebook} target="_blank">
+                              <IconContainer src="./Facebook.png" />
+                            </StyledA>
+                          </Link>
+                        )
+                      else if (flatform === 'github')
+                        return (
+                          <Link href={person.address.github} key={person.address.github}>
+                            <StyledA href={person.address.github} target="_blank">
+                              <IconContainer src="./Github.png" />
+                            </StyledA>
+                          </Link>
+                        )
+                      else if (flatform === 'instagram')
+                        return (
+                          <Link href={person.address.instagram} key={person.address.instagram}>
+                            <StyledA href={person.address.instagram} target="_blank">
+                              <IconContainer src="./Instagram.png" />
+                            </StyledA>
+                          </Link>
+                        )
+                    }
+                  })}
+                </FlatformContainer>
               </InfoContainer>
             </CardContainer>
           ))}
