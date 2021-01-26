@@ -208,7 +208,7 @@ function TeamPage() {
                             </StyledA>
                           </Link>
                         )
-                    }
+                    } else return
                   })}
                 </FlatformContainer>
               </InfoContainer>
