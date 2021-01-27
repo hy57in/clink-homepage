@@ -16,6 +16,16 @@ const data = [
       facebook: 'https://www.facebook.com/CAUCLink',
       instagram: 'https://www.instagram.com',
     },
+    history: {
+      '2012 - 2014': ['학생', '학생', '학생'],
+      '2017 - 현재': [
+        '법무법인 창천 파트너 변호사',
+        '메트라이프 생명보험 보험설계사',
+        '삼성생명 전문 강사',
+        '런인베스트먼트 전임 강사',
+      ],
+      '2014 - 2015': ['법무법인(유한) JP [舊 정평] 변호사', 'a'],
+    },
   },
   {
     id: 1,
@@ -28,6 +38,16 @@ const data = [
       github: 'https://github.com/CAU-CLINK',
       facebook: 'https://www.facebook.com/CAUCLink',
       instagram: '',
+    },
+    history: {
+      '2018 - 현재': ['aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'b'],
+      '2017 - 현재': [
+        '법무법인 창천 파트너 변호사',
+        '메트라이프 생명보험 보험설계사',
+        '삼성생명 전문 강사',
+        '런인베스트먼트 전임 강사',
+      ],
+      '2014 - 2015': ['법무법인(유한) JP [舊 정평] 변호사', 'a'],
     },
   },
   {
@@ -42,6 +62,19 @@ const data = [
       facebook: 'https://www.facebook.com/CAUCLink',
       instagram: 'https://www.instagram.com',
     },
+    history: {
+      '2017 - 현재': [
+        '법무법인 창천 파트너 변호사',
+        '메트라이프 생명보험 보험설계사',
+        '삼성생명 전문 강사',
+        '런인베스트먼트 전임 강사',
+      ],
+      '2014 - 2015': ['법무법인(유한) JP [舊 정평] 변호사', 'a'],
+      '2018 - 현재': [
+        '저는 중앙대학교를 다니는 학생입니다. 저는 중앙대학교를 다니는 학생입니다. 저는 중앙대학교를 다니는 학생입니다. 저는 중앙대학교를 다니는 학생입니다. ',
+        'a',
+      ],
+    },
   },
   {
     id: 3,
@@ -54,6 +87,15 @@ const data = [
       github: 'https://github.com/CAU-CLINK',
       facebook: '',
       instagram: 'https://www.instagram.com',
+    },
+    history: {
+      '2017 - 현재': [
+        '법무법인 창천 파트너 변호사',
+        '메트라이프 생명보험 보험설계사',
+        '삼성생명 전문 강사',
+        '런인베스트먼트 전임 강사',
+      ],
+      '2014 - 2015': ['법무법인(유한) JP [舊 정평] 변호사', 'a'],
     },
   },
   {
@@ -68,6 +110,15 @@ const data = [
       facebook: '',
       instagram: '',
     },
+    history: {
+      '2017 - 현재': [
+        '법무법인 창천 파트너 변호사',
+        '메트라이프 생명보험 보험설계사',
+        '삼성생명 전문 강사',
+        '런인베스트먼트 전임 강사',
+      ],
+      '2014 - 2015': ['법무법인(유한) JP [舊 정평] 변호사', 'a'],
+    },
   },
   {
     id: 5,
@@ -80,6 +131,15 @@ const data = [
       github: '',
       facebook: 'https://www.facebook.com/CAUCLink',
       instagram: '',
+    },
+    history: {
+      '2017 - 현재': [
+        '법무법인 창천 파트너 변호사',
+        '메트라이프 생명보험 보험설계사',
+        '삼성생명 전문 강사',
+        '런인베스트먼트 전임 강사',
+      ],
+      '2014 - 2015': ['법무법인(유한) JP [舊 정평] 변호사', 'a'],
     },
   },
 ]
@@ -114,11 +174,11 @@ const CardContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   width: 700px;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
 `
 
 const SuperContainer = styled.div`
-  width: 250px;
+  width: 230px;
   height: 280px;
   text-align: center;
   background-color: rgba(80, 33, 40, 0.17);
@@ -147,17 +207,23 @@ const Name = styled.h3`
   margin-top: 5px;
   margin-bottom: 5px;
 `
-
+const HideScrollbar = styled.div`
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+`
 const InfoContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 400px;
   height: 280px;
-  background-color: rgba(148, 154, 159, 0.28);
-  margin: 0 50px;
+  margin: 0 40px;
+  overflow: auto;
 `
 
 const FlatformContainer = styled.div`
+  margin: 10px 0px;
+  padding-left: 10px;
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -171,6 +237,24 @@ const IconContainer = styled.img`
 
 const StyledA = styled.a`
   cursor: pointer;
+`
+
+const HistoryContainer = styled.div`
+  width: 96%;
+  height: 100%;
+`
+
+const HistoryTitle = styled.h4`
+  font-weight: 800;
+  font-family: poppin;
+  font-size: 18px;
+`
+
+const HistoryContents = styled.h6`
+  margin: 0px 10px;
+  font-weight: 600;
+  font-family: poppin;
+  font-size: 12px;
 `
 
 function TeamPage() {
@@ -192,34 +276,50 @@ function TeamPage() {
                   <Name>{person.name}</Name>
                 </NameContainer>
               </SuperContainer>
-              <InfoContainer>
-                <FlatformContainer>
-                  {Object.entries(person.address)
-                    .filter((item) => item[1] !== '')
-                    .map((item) => item[0])
-                    .map((flatform) =>
-                      flatform === 'facebook' ? (
-                        <Link href={person.address.facebook} key={person.address.facebook}>
-                          <StyledA href={person.address.facebook} target="_blank">
-                            <IconContainer src="./Facebook.png" />
-                          </StyledA>
-                        </Link>
-                      ) : flatform === 'github' ? (
-                        <Link href={person.address.github} key={person.address.github}>
-                          <StyledA href={person.address.github} target="_blank">
-                            <IconContainer src="./Github.png" />
-                          </StyledA>
-                        </Link>
-                      ) : (
-                        <Link href={person.address.instagram} key={person.address.instagram}>
-                          <StyledA href={person.address.instagram} target="_blank">
-                            <IconContainer src="./Instagram.png" />
-                          </StyledA>
-                        </Link>
-                      )
-                    )}
-                </FlatformContainer>
-              </InfoContainer>
+              <HideScrollbar>
+                <InfoContainer>
+                  <FlatformContainer>
+                    {Object.entries(person.address)
+                      .filter((item) => item[1] !== '')
+                      .map((item) => item[0])
+                      .map((flatform) =>
+                        flatform === 'facebook' ? (
+                          <Link href={person.address.facebook} key={person.address.facebook}>
+                            <StyledA href={person.address.facebook} target="_blank">
+                              <IconContainer src="./Facebook.png" />
+                            </StyledA>
+                          </Link>
+                        ) : flatform === 'github' ? (
+                          <Link href={person.address.github} key={person.address.github}>
+                            <StyledA href={person.address.github} target="_blank">
+                              <IconContainer src="./Github.png" />
+                            </StyledA>
+                          </Link>
+                        ) : (
+                          <Link href={person.address.instagram} key={person.address.instagram}>
+                            <StyledA href={person.address.instagram} target="_blank">
+                              <IconContainer src="./Instagram.png" />
+                            </StyledA>
+                          </Link>
+                        )
+                      )}
+                  </FlatformContainer>
+                  <HistoryContainer>
+                    {Object.entries(person.history)
+                      .sort((a, b) => (a[0] > b[0] ? -1 : 1))
+                      .map((item) => (
+                        <HistoryTitle key={person.id + '\\' + item[0]}>
+                          <HistoryTitle>{item[0]}</HistoryTitle>
+                          {item[1]!.map((content) => (
+                            <HistoryContents key={person.id + '\\' + content}>
+                              {content}
+                            </HistoryContents>
+                          ))}
+                        </HistoryTitle>
+                      ))}
+                  </HistoryContainer>
+                </InfoContainer>
+              </HideScrollbar>
             </CardContainer>
           ))}
         </FlexContainer>
