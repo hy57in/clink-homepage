@@ -2,12 +2,12 @@ import GradientBorder from 'src/components/atoms/GradientBorder'
 import ImageBox from 'src/components/atoms/ImageBox'
 import InternationalizedLink from 'src/components/InternationalizedLink'
 import PageLayout from 'src/components/layouts/PageLayout'
-
+import ProjectContentBox from 'src/components/atoms/ProjectContentBox'
 import PageTitle from 'src/components/layouts/PageTitle'
 import styled from 'styled-components'
 
 const Title = styled.h2`
-  margin: 2rem 0;
+  margin: 1rem 0;
 `
 
 const ExampleParagraph = (
@@ -30,11 +30,77 @@ const ExampleParagraph = (
   </p>
 )
 
+interface Information {
+  id: number
+  name: string
+  content: string[]
+  image: string
+}
+
+const Projects: Information[] = [
+  {
+    id: 1,
+    name: 'MEETING',
+    content: ['Andreas Antonopoulos', 'author of [Mastering Bitcoin]', '@nonce'],
+    image: 'https://i.investopedia.com/image/jpeg/1514919556479/eth.jpeg',
+  },
+  {
+    id: 2,
+    name: 'OPEN SESSION',
+    content: ['History of Blockchain', 'Blochchain Structure', 'Blockchain Use Case 1, 2', '@CAU'],
+    image: 'https://i.investopedia.com/image/jpeg/1514919556479/eth.jpeg',
+  },
+  {
+    id: 3,
+    name: 'HACKATHON',
+    content: [
+      'BlockCamp Hackathon',
+      'Hosted by [BBR], [DAYBIT]',
+      'Creatip 피칭상 : E-voting simluation',
+      '@seoulstartuphub, mapo',
+    ],
+    image: 'https://i.investopedia.com/image/jpeg/1514919556479/eth.jpeg',
+  },
+  {
+    id: 4,
+    name: 'CONTEST',
+    content: ['Ethcon Korea', 'with Onther Inc.'],
+    image: 'https://i.investopedia.com/image/jpeg/1514919556479/eth.jpeg',
+  },
+  {
+    id: 5,
+    name: 'MEETING',
+    content: ['@ Terraformlabs', 'with', 'Do Kwon, CEO', 'Nicholas, Head of Research'],
+    image: 'https://i.investopedia.com/image/jpeg/1514919556479/eth.jpeg',
+  },
+  {
+    id: 6,
+    name: 'HACKATHON',
+    content: [
+      '파운더스 2019 Summer X SK C&C',
+      'Hosted by SK C&C, Decenter University',
+      '1st Prize : Best BM',
+    ],
+    image: 'https://i.investopedia.com/image/jpeg/1514919556479/eth.jpeg',
+  },
+]
+
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+`
+
 function HomePage() {
   return (
     <PageTitle title="중앙대학교 블록체인 학회 C-Link">
       <PageLayout>
         <InternationalizedLink />
+        <Container>
+          {Projects.map((project) => (
+            <ProjectContentBox project={project} key={project.id}></ProjectContentBox>
+          ))}
+        </Container>
         <ImageBox>
           <GradientBorder borderSize="1rem">
             <img
