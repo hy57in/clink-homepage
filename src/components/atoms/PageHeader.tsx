@@ -6,7 +6,8 @@ const TitleDiv = styled.div`
 `
 
 const TitleText = styled.h1`
-  font-size: 200px;
+  font-size: min(9rem, 20vw);
+  white-space: nowrap;
   font-family: poppin;
   font-weight: 800;
 `
