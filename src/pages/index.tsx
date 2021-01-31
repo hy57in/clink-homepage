@@ -1,5 +1,6 @@
 import GradientBorder from 'src/components/atoms/GradientBorder'
 import ImageBox from 'src/components/atoms/ImageBox'
+import InternationalizedLink from 'src/components/InternationalizedLink'
 import PageLayout from 'src/components/layouts/PageLayout'
 import ProjectContentBox from 'src/components/atoms/ProjectContentBox'
 import PageTitle from 'src/components/layouts/PageTitle'
@@ -94,6 +95,7 @@ function HomePage() {
   return (
     <PageTitle title="중앙대학교 블록체인 학회 C-Link">
       <PageLayout>
+        <InternationalizedLink />
         <Container>
           {Projects.map((project) => (
             <ProjectContentBox project={project} key={project.id}></ProjectContentBox>
