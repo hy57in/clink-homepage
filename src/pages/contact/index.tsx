@@ -4,6 +4,7 @@ import PageTitle from 'src/components/layouts/PageTitle'
 import styled from 'styled-components'
 import emailjs from 'emailjs-com'
 import { useForm } from 'react-hook-form'
+import { message, Alert } from 'antd'
 
 const Wrapper = styled.div`
   display: flex;
@@ -90,14 +91,14 @@ type FormData = {
 }
 
 function ContactPage() {
-  //email-js 키값
+  // email-js 키값
   const serviceId = 'service_oozorde'
   const templateId = 'template_spwgo7a'
   const userId = 'user_aO4pNuNPo40o3QURHDcSD'
-  const { register, handleSubmit } = useForm<FormData>()
+  const { register, handleSubmit, errors } = useForm<FormData>()
 
   const handleSubmitForm = handleSubmit((data: FormData, r: any) => {
-    alert('이메일 전송 완료')
+    message.success('이메일 전송 완료')
     emailjs.send(
       serviceId,
       templateId,
@@ -149,6 +150,9 @@ function ContactPage() {
                 ref={register({ required: true, pattern: /^\S+@\S+$/i })}
               />
               <Textarea placeholder="message" name="message" ref={register({ required: true })} />
+              {(errors.email || errors.message || errors.name) && (
+                <Alert message="모든 칸을 입력해주세요." type="error" showIcon />
+              )}
               <ButtonDiv>
                 <Button type="submit" value="SEND" />
               </ButtonDiv>
