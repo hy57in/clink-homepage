@@ -9,6 +9,7 @@ import { message, Alert } from 'antd'
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: nowrap;
 `
 const Container = styled.main`
   display: flex;
@@ -24,12 +25,15 @@ const SNS = styled.div`
 
 const Facebook = styled.div`
   width: 8.5rem;
+  min-width: 8rem;
+  height: 7em;
   border: 0.5rem solid #1877f2;
   padding: 0 0.8rem;
 `
 
 const Medium = styled.div`
   width: 8.5rem;
+  height: 7em;
   border: 0.5rem solid black;
   padding: 0 0.8rem;
 `
@@ -40,7 +44,7 @@ const SNSName = styled.span`
 `
 
 const SNSLink = styled.a`
-  font-size: 1.5rem;
+  font-size: min(1.5rem, 3vw);
   color: inherit;
 `
 
@@ -90,21 +94,29 @@ type FormData = {
   message: string
 }
 
+const serviceId = 'service_oozorde'
+const templateId = 'template_spwgo7a'
+const userId = 'user_aO4pNuNPo40o3QURHDcSD'
+
 function ContactPage() {
   // email-js 키값
-  const serviceId = 'service_oozorde'
-  const templateId = 'template_spwgo7a'
-  const userId = 'user_aO4pNuNPo40o3QURHDcSD'
   const { register, handleSubmit, errors } = useForm<FormData>()
 
   const handleSubmitForm = handleSubmit((data: FormData, r: any) => {
     message.success('이메일 전송 완료')
-    emailjs.send(
-      serviceId,
-      templateId,
-      { name: data.name, email: data.email, message: data.message },
-      userId
-    )
+    emailjs
+      .send(
+        serviceId,
+        templateId,
+        { name: data.name, email: data.email, message: data.message },
+        userId
+      )
+      .then((res) => {
+        return console.log(res)
+      })
+      .catch((error) => {
+        return console.log(error)
+      })
     r.target.reset()
   })
 
