@@ -149,7 +149,7 @@ const MemberDiv = styled.div`
 `
 
 const MemberText = styled.h1`
-  font-size: 200px;
+  font-size: 13vw;
   font-family: poppin;
   font-weight: 800;
 `
